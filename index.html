@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="weather-app">
+    <header>
+      <h1>Weather App</h1>
+      <form id="search-form">
+        <input type="text" id="city-input" placeholder="Enter city name" autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <button id="geo-btn" title="Get weather for current location">📍</button>
+      <div class="unit-toggle">
+        <span id="celsius" class="active">°C</span> |
+        <span id="fahrenheit">°F</span>
+      </div>
+    </header>
+    <main>
+      <div id="loading" class="hidden">Loading...</div>
+      <div id="error" class="hidden"></div>
+      <section id="weather-card" class="card hidden">
+        <div class="weather-main">
+          <div class="weather-icon" id="weather-icon"></div>
+          <div class="weather-info">
+            <h2 id="city-name"></h2>
+            <p id="description"></p>
+            <div class="temp-row">
+              <span id="temperature"></span>
+              <span id="feels-like"></span>
+            </div>
+          </div>
+        </div>
+        <div class="weather-details">
+          <div><span>🌬️</span> Wind: <span id="wind"></span></div>
+          <div><span>💧</span> Humidity: <span id="humidity"></span></div>
+          <div><span>☁️</span> Clouds: <span id="clouds"></span></div>
+          <div><span>🔽</span> Pressure: <span id="pressure"></span></div>
+          <div><span>🌅</span> Sunrise: <span id="sunrise"></span></div>
+          <div><span>🌇</span> Sunset: <span id="sunset"></span></div>
+        </div>
+      </section>
+      <section id="forecast" class="card hidden"></section>
+    </main>
+    <footer>
+      <small>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></small>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
